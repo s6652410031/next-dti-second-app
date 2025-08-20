@@ -1,47 +1,30 @@
-import React from "react";
-import image from "next/image";
-import coffee2 from "../images/coffee2.jpg";
-import coffee3 from "../images/coffee3.jpg";
+import React from 'react'
+import Image from 'next/image'
+import MoneyShare from '@/components/MoneyShare'
+import money from './images/money.png'
+
 export default function HomePage() {
   return (
-    <div className='p-10'>
-      <h1 className="text-center text-4xl font-bold text-amber-800">
-      SAU-Coffee Cafe
-      </h1>
-      <h3 className="text-center text-2xl font-bold text-amber-800">
-        ยินดีต้อนรับสู่ร้านกาแฟ SAU-Coffee
+    <div className="flex flex-col min-h-screen items-center justify-center">
+      <div className='shadow-xl rounded-2xl p-8 w-full max-w-xl'>
+        <h1 className='text-3xl font-bold text-center text-blue-800'>
+          Money Share Calculator
+        </h1>
+        <h3 className='text-lg font-bold text-center text-blue-800'>
+          คำนวณเงินที่ต้องการหารกัน
+        </h3>
+        <Image className='mx-auto mt-4'
+          src={money} alt="money" width={100} height={100}/>
+        <MoneyShare/>
+      </div>
+      <h3 className='mt-8 font-bold text-xl'>
+        developed by
+        <span>
+
+          Napat DTI SAU
+
+        </span>
       </h3>
-      <hr className="my-5"/>
-      <p>  
-      </p>
-      <hr className="my-5" />
-      <image
-        src="/Coffee.jpg"
-        alt="First Coffee"
-        width={200}
-        height={200}
-        />
-    <div className ="flex my-5 gap-7 justify-center">
-      <image
-        src={coffee2}
-        alt="Second Coffee"
-        width={200}
-        height={200}
-      />
-      <image
-        src={coffee3}
-        alt="Third Coffee"
-        width={200}
-        height={200}
-      />
-      <image
-        src="https://www.istockphoto.com/photo/black-coffee-in-a-white-glass-placed-on-an-old-cement-table-with-coffee-beans-gm1552871673-526527249?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner-popular_media&utm_term=coffee"
-        alt="Fourth Coffee"
-        width={200}
-        height={200}
-        className="flex mx-auto"
-      />
     </div>
-    </div>
-  );
+  )
 }

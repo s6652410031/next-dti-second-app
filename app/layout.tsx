@@ -1,28 +1,20 @@
 import type { Metadata } from "next";
-import localfont from "next/font/local";
+import { Prompt } from "next/font/google";
 import "./globals.css";
 
-const Churros = localfont({
-  src: "././fonts/Churros-PersonalOnly.ttf",
+const prompt = Prompt({
+  subsets: ["latin"],
+  weight: ["100", "200", "300","400", "500", "600", "700", "800", "900"],
 });
 
+
 export const metadata: Metadata = {
-  title: "SAU-Coffee Cafe",
-  description: "ร้านกาแฟ SAU-Coffee",
-  keywords: [
-    "SAU-Coffee",
-    "ร้านกาแฟ",
-    "กาแฟ",
-    "คาเฟ่",
-    "SAU",
-    "SAU-Coffee Cafe",
-  ],
-  authors: [
-    {
-      name: "SAU-Coffee",
-      url: "https://wwww.sautechnology.com",
-    },
-  ],
+  title: "Money Share Calculator",
+  description: "เว็ปไซต์สำหรับคำนวณการแบ่งเงิน",
+  keywords: ["เงิน","แบ่งเงิน", "หารกัน"],
+  icons: {
+    icon: "/next.svg",
+  }
 };
 
 export default function RootLayout({
@@ -31,13 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <html lang="en">
+    <html lang="en">
       <body
-        className={ Churros.className }
+        className={ prompt.className }
       >
         {children}
       </body>
-    );
-  </html>
+    </html>
   );
 }
